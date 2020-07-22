@@ -1,0 +1,128 @@
+fileFormatVersion: 2
+guid: 94977a13bbf549b4d918045c2930d091
+timeCreated: 1453825614
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: asd
+    100002: File_Papers
+    100004: Files_Drawer
+    100006: Flagpole_Wall
+    100008: //RootNode
+    100010: Painting_Diploma
+    100012: Painting_Pic
+    100014: Sign_Hanging
+    100016: Table_Flag
+    100018: Trashcan
+    100020: USA_Flag
+    100022: Leather_Bench
+    400000: asd
+    400002: File_Papers
+    400004: Files_Drawer
+    400006: Flagpole_Wall
+    400008: //RootNode
+    400010: Painting_Diploma
+    400012: Painting_Pic
+    400014: Sign_Hanging
+    400016: Table_Flag
+    400018: Trashcan
+    400020: USA_Flag
+    400022: Leather_Bench
+    2300000: asd
+    2300002: File_Papers
+    2300004: Files_Drawer
+    2300006: Flagpole_Wall
+    2300008: Painting_Diploma
+    2300010: Painting_Pic
+    2300012: Sign_Hanging
+    2300014: Table_Flag
+    2300016: Trashcan
+    2300018: USA_Flag
+    2300020: Leather_Bench
+    3300000: asd
+    3300002: File_Papers
+    3300004: Files_Drawer
+    3300006: Flagpole_Wall
+    3300008: Painting_Diploma
+    3300010: Painting_Pic
+    3300012: Sign_Hanging
+    3300014: Table_Flag
+    3300016: Trashcan
+    3300018: USA_Flag
+    3300020: Leather_Bench
+    4300000: asd
+    4300002: Sign_Hanging
+    4300004: File_Papers
+    4300006: Trashcan
+    4300008: Files_Drawer
+    4300010: Painting_Pic
+    4300012: Painting_Diploma
+    4300014: USA_Flag
+    4300016: Flagpole_Wall
+    4300018: Table_Flag
+    4300020: Leather_Bench
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

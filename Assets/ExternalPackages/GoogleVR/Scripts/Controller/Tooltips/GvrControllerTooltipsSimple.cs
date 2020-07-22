@@ -1,0 +1,116 @@
+﻿// Copyright 2017 Google Inc. All rights reserved.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+// The controller is not available for versions of Unity without the
+// GVR native integration.
+
+using UnityEngine;
+using System.Collections;
+using MAROMAV.CoworkSpace;
+
+/// A lightweight tooltip designed to minimize draw calls.
+[ExecuteInEditMode]
+public class GvrControllerTooltipsSimple : MonoBehaviour, IGvrArmModelReceiver
+{
+
+    private MeshRenderer tooltipRenderer;
+
+    public GvrBaseArmModel ArmModel { get; set; }
+
+    private MaterialPropertyBlock materialPropertyBlock;
+    private int colorId;
+
+    public enum ControllerMode
+    {
+        NONE = 0,
+        HAND,
+        PEN,
+        ERASER,
+        SELECTING_PICTURE,
+    }
+    private ControllerMode mode;
+
+    void Awake()
+    {
+        Initialize();
+    }
+
+    void OnEnable()
+    {
+        GvrControllerInput.OnPostControllerInputUpdated += OnPostControllerInputUpdated;
+    }
+
+    void OnDisable()
+    {
+        GvrControllerInput.OnPostControllerInputUpdated -= OnPostControllerInputUpdated;
+    }
+
+    void OnValidate()
+    {
+        if (!Application.isPlaying)
+        {
+            Initialize();
+            OnVisualUpdate();
+        }
+    }
+
+    private void Initialize()
+    {
+        if (tooltipRenderer == null)
+        {
+            tooltipRenderer = GetComponent<MeshRenderer>();
+        }
+        if (materialPropertyBlock == null)
+        {
+            materialPropertyBlock = new MaterialPropertyBlock();
+        }
+        colorId = Shader.PropertyToID("_Color");
+
+        string tooltipName = this.gameObject.name;
+
+        if (tooltipName.Contains("Grab"))
+        {
+            mode = ControllerMode.HAND;
+        }
+        else if (tooltipName.Contains("Sketch"))
+        {
+            mode = ControllerMode.PEN;
+        }
+        else if (tooltipName.Contains("Gallery"))
+        {
+            mode = ControllerMode.SELECTING_PICTURE;
+        }
+    }
+
+    private void OnPostControllerInputUpdated()
+    {
+        OnVisualUpdate();
+    }
+
+    protected void OnVisualUpdate()
+    {
+        float alpha;
+        if ((int)ControllerInteractionGoogleVR.controllerMode == (int)mode)
+        {
+            alpha = ArmModel != null ? ArmModel.TooltipAlphaValue : 1.0f;
+        }
+        else
+        {
+            alpha = 0f;
+        }
+
+        materialPropertyBlock.SetColor(colorId, new Color(1, 1, 1, alpha));
+        tooltipRenderer.SetPropertyBlock(materialPropertyBlock);
+    }
+}
